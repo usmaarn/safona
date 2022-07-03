@@ -1,0 +1,66 @@
+.footer {
+    @apply bg-black mt-10 text-gray-200 py-10 flex flex-col gap-10;
+
+    *{
+        @apply text-white/40;
+    }
+
+    .wrapper {
+        @apply max-w-[940px] mx-auto;
+
+        .top-menu{
+            @apply flex justify-between items-center;
+            .logo{@apply text-4xl capitalize magisho;}
+            .search_wrapper .search{
+                @apply rounded bg-white/10 text-sm w-96 border-none font-semibold focus:ring-0;
+            }
+        }
+
+        .footer_menu{
+
+            .footer_menu_section{
+                @apply flex flex-col items-start gap-1;
+                li,h1 {
+                    &.heading{
+                        @apply font-semibold capitalize;
+                    }
+                    a {
+                        @apply capitalize hover:border-b text-sm border-gray-600;
+                    }
+                }
+
+                .tags{
+                    li a {
+                        @apply capitalize flex items-center justify-center border border-white/10
+                        rounded text-sm px-3 gap-1 py-1 hover:bg-white/10;
+                    }
+                }
+            }
+        }
+    }
+
+    .section_two{
+        @apply border-y py-10 border-white/10;
+        .wrapper {
+            @apply grid grid-cols-5 gap-10;
+            .heading{
+                @apply capitalize mb-2;
+            }
+
+            .social_links{
+                @apply flex items-center gap-3 flex-wrap;
+                li a{
+                    @apply inline-block w-10 h-10 border border-white/10 rounded
+                    text-xl flex items-center justify-center text-white/30;
+                }
+            }
+        }
+    }
+
+    .copyright{
+        @apply text-sm flex gap-1 justify-center text-white/30;
+        a{
+            @apply text-sky-300/40 hover:border-b border-sky-900;
+        }
+    }
+}

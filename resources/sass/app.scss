@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Engagement&display=swap');
 
+.magisho {font-family: "Magisho", sans-serif;}
+
+*{
+    font-family: 'Soleto Trial', sans-serif;
+    @apply text-[#000];
+}
+
+@import "layouts/footer";
 
 @tailwind base;
 @tailwind components;
