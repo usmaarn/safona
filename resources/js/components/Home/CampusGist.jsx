@@ -7,7 +7,7 @@ export default function CampusGist() {
                 Campus Gist
             </h2>
 
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
                 {[1,2,3,4,5].map(el => (
                     <div className="rounded overflow-hidden" key={el}>
                         <div className="h-auto h-28 bg-gray-300">

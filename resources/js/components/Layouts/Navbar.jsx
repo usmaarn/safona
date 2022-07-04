@@ -6,10 +6,10 @@ export default function Navbar(){
             <div className="max-w-[1100px] mx-auto flex items-center justify-between gap-5 h-full">
 
                 <Link href="/">
-                    <span className="magisho text-2xl">Safona.Media</span>
+                    <span className="magisho text-2xl">Safona</span>
                 </Link>
 
-                <ul className="flex items-center gap-5">
+                <ul className="hidden md:flex items-center gap-5">
                     <li>Politics</li>
                     <li>Campus</li>
                     <li>Entertainment</li>

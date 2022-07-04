@@ -11,11 +11,11 @@ export default function Trending(){
             <div className="grid grid-cols-2 gap-5">
                 {[1,2,3,4].map(el => (
                     <div className="rounded overflow-hidden" key={el}>
-                        <div className="h-56 w-full bg-gray-300">
+                        <div className="h-40 md:h-56 w-full bg-gray-300">
                             <img className="rounded w-full h-full object-cover" src="" alt="cover"/>
                         </div>
                         <div className="flex flex-col p-1">
-                            <h5 className="text-slate-700 border-b">
+                            <h5 className="text-slate-700 text-sm md:text-base border-b">
                                 Update on Lil Tjay's health status revealed
                             </h5>
                             <p className="text-xs text-gray-600">23 mins ago</p>

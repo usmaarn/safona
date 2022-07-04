@@ -2109,14 +2109,14 @@ __webpack_require__.r(__webpack_exports__);
 function Home() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      className: "mt-10",
+      className: "mt-5 md:mt-10 px-3 md:p-0",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "max-w-[940px] mx-auto",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
           className: "uppercase mb-2 text-sky-500 font-bold",
           children: "Latest Stories"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Home_Slider__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "grid grid-cols-3 gap-5 mt-10",
+          className: "flex flex-col md:grid grid-cols-3 gap-5 mt-10",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "col-span-2",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Home_Trending__WEBPACK_IMPORTED_MODULE_4__["default"], {})
@@ -2331,7 +2331,7 @@ function CampusGist() {
       className: "mb-2 text-xl capitalize text-sky-600 font-medium border-b",
       children: "Campus Gist"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "grid grid-cols-4 gap-5",
+      className: "grid grid-cols-2 md:grid-cols-4 gap-5",
       children: [1, 2, 3, 4, 5].map(function (el) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
           className: "rounded overflow-hidden",
@@ -2384,12 +2384,12 @@ function MoreNews() {
       className: "mb-2 text-xl uppercase text-sky-600 font-medium border-b",
       children: "More News"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "grid grid-cols-3 gap-5",
+      className: "grid grid-cols-2 md:grid-cols-3 gap-5",
       children: [1, 2, 3, 4, 5].map(function (el) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
           className: "rounded overflow-hidden",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            className: "h-auto h-48 bg-gray-300",
+            className: "h-auto h-24 md:h-48 bg-gray-300",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
               className: "rounded w-full h-full object-cover",
               src: "",
@@ -2401,7 +2401,7 @@ function MoreNews() {
               className: "uppercase bg-sky-700 text-xs text-white px-1 py-0.5",
               children: "Kasu"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h5", {
-              className: "text-slate-700 text-[16px] border-b",
+              className: "text-slate-700 text-sm md:text-[16px] border-b",
               children: "Update on Lil Tjay's health status revealed"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
               className: "text-xs mt-1 text-gray-600",
@@ -2481,13 +2481,16 @@ __webpack_require__.r(__webpack_exports__);
 
 function Slider() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "grid grid-cols-6 gap-6",
+    className: "md:grid md:grid-cols-6 gap-6",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "col-span-4 h-96 bg-black",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-        className: "w-full object-cover h-full opacity-50",
-        src: "",
-        alt: "cover"
+      className: "md:col-span-4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "h-64 md:h-96 bg-black",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          className: "w-full object-cover h-full opacity-50",
+          src: "",
+          alt: "cover"
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "py-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
@@ -2502,10 +2505,10 @@ function Slider() {
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "col-span-2 flex flex-col gap-2",
+      className: "md:col-span-2 flex md:flex-col gap-2 mt-3 md:mt-0",
       children: [1, 2].map(function (el) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "rounded overflow-hidden",
+          className: "rounded overflow-hidden flex-grow",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "w-full bg-gray-300",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
@@ -2547,18 +2550,18 @@ __webpack_require__.r(__webpack_exports__);
 
 function TopVideos() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "bg-black/90 p-10 my-10",
+    className: "bg-black/90 px-3 py-10 md:px-10 my-10",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "max-w-[940px] mx-auto",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h2", {
         className: "mb-2 text-xl text-sky-600 font-medium border-b border-gray-500 uppercase",
         children: "Top Videos"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "grid grid-cols-3 gap-5",
+        className: "flex flex-col md:grid grid-cols-3 gap-5",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
           className: "col-span-2",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            className: "h-96 bg-gray-300",
+            className: "h-52 md:h-96 bg-gray-300",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
               src: "",
               alt: "cover"
@@ -2566,7 +2569,7 @@ function TopVideos() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: "",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-              className: "text-gray-300 text-lg border-b border-gray-500",
+              className: "text-gray-300 text-sm md:text-lg border-b border-gray-500",
               children: "Police Broke Into My House Through Ceiling, Arrested My Husband, Woman Narrates Her Experience"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
               className: "text-gray-400",
@@ -2574,12 +2577,12 @@ function TopVideos() {
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-          className: "grid grid-cols-1 gap-3",
+          className: "grid grid-cols-2 md:grid-cols-1 gap-3",
           children: [1, 2].map(function (el) {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
               className: "",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-                className: "h-40 bg-gray-300",
+                className: "h-24 md:h-40 bg-gray-300",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
                   src: "",
                   alt: "cover"
@@ -2587,7 +2590,7 @@ function TopVideos() {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: "",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-                  className: "text-gray-300 text-sm border-b border-gray-500",
+                  className: "text-gray-300 text-xs md:text-sm border-b border-gray-500",
                   children: "Police Broke Into My House Through Ceiling,"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
                   className: "text-gray-400 text-xs",
@@ -2598,12 +2601,12 @@ function TopVideos() {
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "grid grid-cols-4 gap-3 mt-5",
+        className: "grid grid-cols-2 md:grid-cols-4 gap-3 mt-5",
         children: [1, 2, 3, 4].map(function (el) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: "",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-              className: "h-40 bg-gray-300",
+              className: "h-24 md:h-40 bg-gray-300",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
                 src: "",
                 alt: "cover"
@@ -2611,7 +2614,7 @@ function TopVideos() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
               className: "",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-                className: "text-gray-300 text-sm border-b border-gray-500",
+                className: "text-gray-300 text-xs md:text-sm border-b border-gray-500",
                 children: "Police Broke Into My House Through Ceiling,"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
                 className: "text-gray-400 text-xs",
@@ -2654,7 +2657,7 @@ function Trending() {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
           className: "rounded overflow-hidden",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            className: "h-56 w-full bg-gray-300",
+            className: "h-40 md:h-56 w-full bg-gray-300",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
               className: "rounded w-full h-full object-cover",
               src: "",
@@ -2663,7 +2666,7 @@ function Trending() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: "flex flex-col p-1",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h5", {
-              className: "text-slate-700 border-b",
+              className: "text-slate-700 text-sm md:text-base border-b",
               children: "Update on Lil Tjay's health status revealed"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
               className: "text-xs text-gray-600",
@@ -2747,7 +2750,7 @@ function Footer() {
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "footer_menu grid grid-cols-4 gap-5 mt-10",
+        className: "footer_menu grid grid-cols-2 md:grid-cols-4 gap-5 mt-10",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
           className: "footer_menu_section",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
@@ -2942,10 +2945,10 @@ function Navbar() {
         href: "/",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
           className: "magisho text-2xl",
-          children: "Safona.Media"
+          children: "Safona"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
-        className: "flex items-center gap-5",
+        className: "hidden md:flex items-center gap-5",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
           children: "Politics"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {

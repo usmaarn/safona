@@ -17,7 +17,7 @@ export default function Footer(){
                     </div>
                 </div>
 
-                <div className="footer_menu grid grid-cols-4 gap-5 mt-10">
+                <div className="footer_menu grid grid-cols-2 md:grid-cols-4 gap-5 mt-10">
                     <ul className="footer_menu_section">
                         <li className="heading">pages</li>
                         <li><a href="#">About</a></li>

@@ -9,7 +9,7 @@ import MoreNews from "../components/Home/MoreNews";
 export default function Home(){
     return(
         <Layout>
-            <div className="mt-10">
+            <div className="mt-5 md:mt-10 px-3 md:p-0">
 
                 <div className="max-w-[940px] mx-auto">
                     <h3 className="uppercase mb-2 text-sky-500 font-bold">
@@ -17,7 +17,7 @@ export default function Home(){
                     </h3>
                     <Slider />
 
-                    <div className="grid grid-cols-3 gap-5 mt-10">
+                    <div className="flex flex-col md:grid grid-cols-3 gap-5 mt-10">
                         <div className="col-span-2">
                             <Trending />
                         </div>
