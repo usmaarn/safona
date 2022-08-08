@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Pages\HomeController;
 
-Route::get('/', \App\Http\Controllers\Pages\HomeController::class)->name('home');
-Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'page'])->name('login');
+Route::get('/', HomeController::class)->name('home');
+
+require_once __DIR__ . '/auth.php';

@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Engagement&display=swap');
-
-.magisho {font-family: "Magisho", sans-serif;}
-
-*{
-    font-family: 'Soleto Trial', sans-serif;
-    @apply text-[#000];
+@font-face {
+    font-family: "Charter BT";
+    src: url('Charter BT.ttf');
 }
 
-@import "layouts/footer";
+html{font-size: 14px;}
+body{@apply text-dark font-poppins;}
+
+@import "layouts";
 
 @tailwind base;
 @tailwind components;

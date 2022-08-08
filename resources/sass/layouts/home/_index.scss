@@ -1,0 +1,92 @@
+.main-wrapper{
+    margin-top: 2rem;
+
+    > .top{
+        display: grid;
+        grid-template-columns: 18rem auto 24rem;
+        gap: 2rem;
+    }
+
+    .heading{
+        @apply text-h3 uppercase font-bold mb-2;
+    }
+
+    .post-title a, .title a, .post-tag a, .tag a{
+        @apply hover:underline;
+    }
+
+    .post-title{
+        @apply font-medium text-zinc-700;
+    }
+
+    .post-thumbnail{
+        @apply overflow-hidden w-full block bg-black;
+        img{@apply w-full h-full object-cover opacity-80;}
+    }
+
+    .post-meta{
+        @apply flex items-center mt-2;
+        p::after{
+            content: '|';
+            @apply mx-2 text-zinc-500;
+        }
+        p:last-child::after{content: ''}
+    }
+
+    .post-tag a{
+        @apply text-primary uppercase text-h5 font-medium tracking-wide;
+    }
+    p.post-date{
+        @apply text-h5 text-zinc-500 font-medium;
+    }
+
+    @import "popular-news";
+
+    //Top News
+    .top-news{
+        @apply  col-span-3;
+        .posts{
+            @apply grid grid-cols-2 gap-5;
+            .post:first-child{@apply col-span-2;}
+            .post:first-child .post-title a{@apply md:text-[1.2rem];}
+            //.post:first-child .post-thumbnail{@apply rounded-xl;}
+
+        }
+    }
+
+    //Latest News
+    .latest-news .posts .post{
+        @apply pb-5;
+        .post-thumbnail{@apply h-[150px];}
+    }
+
+
+    //Videos
+    .videos{
+        @apply p-10 rounded bg-zinc-100 border border-zinc-300 border-dashed my-10;
+        > .wrapper{@apply grid grid-cols-4 gap-10;}
+        .post-title{@apply mt-2;}
+        .left{
+            @apply col-span-3;
+            video{@apply w-full rounded-xl;}
+            .post-title{@apply text-[1.2rem]}
+        }
+        .right{@apply space-y-10;}
+    }
+
+
+    //More News
+    .more-news{
+        .news{
+            @apply py-10 border-b;
+            .posts{
+                @apply grid grid-cols-3 gap-5;
+
+                .post{
+                    @apply pb-5 border-b;
+                    .post-title{@apply text-[1.1rem]}
+                }
+            }
+        }
+    }
+}

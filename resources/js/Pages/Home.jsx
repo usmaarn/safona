@@ -1,41 +1,30 @@
-import Layout from "@/components/Layout";
-import CampusGist from "../components/Home/CampusGist";
-import Slider from "../components/Home/Slider";
-import Politics from "../components/Home/Politics";
-import Trending from "../components/Home/Trending";
-import TopVideos from "../components/Home/TopVideos";
-import MoreNews from "../components/Home/MoreNews";
+import Layout from "../Layouts/Index";
+import LatestNews from "../Layouts/Home/LatestNews";
+import TopNews from "../Layouts/Home/TopNews";
+import Popular from "../Layouts/Home/Popular";
+import Videos from "../Layouts/Home/Videos";
+import MoreNews from "../Layouts/Home/MoreNews";
+
 
 export default function Home(){
     return(
         <Layout>
-            <div className="mt-5 md:mt-10 px-3 md:p-0">
-
-                <div className="max-w-[940px] mx-auto">
-                    <h3 className="uppercase mb-2 text-sky-500 font-bold">
-                        Latest Stories
-                    </h3>
-                    <Slider />
-
-                    <div className="flex flex-col md:grid grid-cols-3 gap-5 mt-10">
-                        <div className="col-span-2">
-                            <Trending />
-                        </div>
-                        <div className="">
-                            <Politics />
-                        </div>
+            <div className="main-wrapper">
+                <div className="top">
+                    <div className="">
+                        <LatestNews />
                     </div>
-
-                    <CampusGist />
-
+                    <div className="">
+                        <TopNews />
+                    </div>
+                    <div className="">
+                        <Popular />
+                    </div>
                 </div>
 
-                <TopVideos />
+                <Videos />
 
-                <div className="max-w-[940px] mx-auto">
-                    <MoreNews />
-                </div>
-
+                <MoreNews />
             </div>
         </Layout>
     )
