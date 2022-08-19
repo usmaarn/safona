@@ -1,0 +1,33 @@
+.input-box,
+.check-box,
+.textarea-box {
+
+    @apply text-zinc-600 mb-2 text-base;
+
+    .error-text {
+        @apply text-red-500 text-sm;
+    }
+}
+
+.input-box {
+
+    input {
+        @apply px-3 w-full py-3 rounded-lg border border-zinc-300;
+
+        &.invalid-input {
+            @apply border-red-500 placeholder:text-red-500;
+        }
+    }
+}
+
+.check-box {
+
+    label {
+        @apply flex items-center gap-2;
+    }
+}
+
+
+.submit-btn{
+    @apply bg-dark w-full text-center py-3 rounded-lg text-white hover:opacity-80 font-bold;
+}

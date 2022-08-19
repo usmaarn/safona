@@ -1,30 +1,30 @@
-import Layout from "../Layouts/Index";
-import LatestNews from "../Layouts/Home/LatestNews";
-import TopNews from "../Layouts/Home/TopNews";
-import Popular from "../Layouts/Home/Popular";
-import Videos from "../Layouts/Home/Videos";
-import MoreNews from "../Layouts/Home/MoreNews";
+import Layout from "@/Layouts/Index";
+import LatestNews from "@/Components/Home/LatestNews";
+import TopNews from "@/Components/Home/TopNews";
+import Popular from "@/Components/Home/Popular";
+import Videos from "@/Components/Home/Videos";
+import MoreNews from "@/Components/Home/MoreNews";
 
 
-export default function Home(){
-    return(
+export default function Home(props) {
+    return (
         <Layout>
             <div className="main-wrapper">
                 <div className="top">
                     <div className="">
-                        <LatestNews />
+                        <LatestNews posts={props.latest} />
                     </div>
                     <div className="">
-                        <TopNews />
+                        <TopNews posts={props.top} />
                     </div>
                     <div className="">
-                        <Popular />
+                        <Popular posts={props.education} business={props.business} />
                     </div>
                 </div>
 
                 <Videos />
 
-                <MoreNews />
+                <MoreNews posts={props.career} />
             </div>
         </Layout>
     )

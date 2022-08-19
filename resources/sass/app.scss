@@ -3,10 +3,22 @@
     src: url('Charter BT.ttf');
 }
 
-html{font-size: 14px;}
-body{@apply text-dark font-poppins;}
+html {
+    font-size: 14px;
+}
 
+body {
+    @apply text-dark font-serif;
+    a{
+        @apply hover:underline;
+    }
+}
+
+@import "animations";
 @import "layouts";
+@import '_components';
+@import "dashboard";
+
 
 @tailwind base;
 @tailwind components;

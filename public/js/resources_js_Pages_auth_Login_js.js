@@ -1,4 +1,4 @@
-"use strict";
+is"use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_auth_Login_js"],{
 
 /***/ "./resources/js/Pages/auth/Login.js":

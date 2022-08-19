@@ -1,0 +1,17 @@
+.trans-enter {
+    opacity: 0;
+}
+
+.trans-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+.trans-exit {
+    opacity: 1;
+}
+
+.trans-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+}

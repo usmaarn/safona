@@ -1,57 +1,83 @@
-import {GrGoogle, GrTwitter} from 'react-icons/gr'
+import { GrGoogle, GrTwitter } from 'react-icons/gr'
+import { Input } from '@/Components/Form'
+import Auth from '@/Layouts/Auth'
+import { CheckBox, SubmitButton } from '@/Components/Form'
+import { useForm } from '@inertiajs/inertia-react'
 
 
-export default function Register(){
-    return(
-        <div className="grid grid-cols-2 min-h-screen">
+export default function Register() {
 
-            <div className="col-span-1 bg-dark">
-            </div>
+    const { data, setData, errors, post } = useForm({
+        firstname: '',
+        lastname: '',
+        username: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
+        terms: false,
+        newsletter: false,
+    });
 
-            <div className="flex flex-col gap-10 items-center justify-center">
-                <a href="#" className="text-h2 text-primary uppercase font-bold">
-                    Safona Media
-                </a>
-                <img src="https://drive.google.com/file/d/1En5RInmGa3-mmFydx9HSIzc0iysFY8FB/view?usp=sharing" alt="" />
-                <h3 className="text-h3 font-medium">Login</h3>
+    const handleChange = (e) => {
+        e.target.type == 'checkbox'
+            ? setData(e.target.name, !data[e.target.name])
+            : setData(e.target.name, e.target.value)
+    }
 
-                <div className="flex flex-col gap-5">
+    const submit = (e) => {
+        e.preventDefault();
+        post(route('register'))
+        console.log(errors)
+    }
 
-                    <form className="pb-5 border-b">
-                        <Input error label="Email Address" />
-                        <Input label="Password" />
-                        <label htmlFor="check" className="flex items-center gap-2 py-2">
-                            <input type="checkbox" />
-                            Remember Me
-                        </label>
-                        <button className="bg-dark w-full text-center py-3 rounded-lg text-white hover:opacity-80">
-                            Sign In
-                        </button>
-                        <a href="#" className="float-right mt-2 text-primary hover:underline    ">forgot password?</a>
-                    </form>
+    return (
+        <Auth title="Register">
 
-                    <div className="flex flex-col gap-3">
-                        <a href="#" className='py-3 text-red-500 rounded-lg border flex items-center justify-center gap-3 text-zinc-600'>
-                            <GrGoogle /> Sign In With Google
-                        </a>
-                        <a href="#" className='py-3 text-sky-500 rounded-lg border flex items-center justify-center gap-3 text-zinc-600'>
-                            <GrTwitter /> Sign In With Twitter
-                        </a>
-                    </div>
+            <form onSubmit={submit} className="auth-form">
 
+                <div className="input-groups">
+                    <Input label="First Name" error={errors.firstname} onChange={handleChange}
+                        name="firstname" value={data.firstname} />
+
+                    <Input label="Last Name" onChange={handleChange} error={errors.lastname}
+                        name="lastname" value={data.lastname} />
+
+                    <Input label="Username" onChange={handleChange} error={errors.username}
+                        name="username" value={data.username} />
+
+                    <Input label="Email Address" onChange={handleChange} error={errors.email}
+                        name="email" value={data.email} type="email" />
+
+                    <Input type="password" label="Password" onChange={handleChange}
+                        name="password" value={data.password} error={errors.password} />
+
+                    <Input type="password" label="Confirm Password" onChange={handleChange}
+                        name="password_confirmation" value={data.password_confirmation}
+                        error={errors.password} />
                 </div>
+
+                <CheckBox name="newsletter" onChange={handleChange} checked={data.newsletter}
+                    label="Sign up for the Reuters Daily Briefing newsletter to get all the news you need to start your day." />
+                <CheckBox name="terms" onChange={handleChange} checked={data.terms} error={errors.terms}
+                    label="I agree to the Terms & Conditions and Privacy Statement." />
+                <SubmitButton text="Register" />
+
+                <div className="pages-links">
+                    <a href={route('login')}>Sign In</a>
+                </div>
+
+            </form>
+
+            <div className="social-login cols">
+                <a href="#" className='text-red-500'>
+                    <GrGoogle /> Sign In With Google
+                </a>
+                <a href="#" className='text-sky-500'>
+                    <GrTwitter /> Sign In With Twitter
+                </a>
+
             </div>
-        </div>
+
+        </Auth>
     )
 }
-
-
-const Input = ({error, label}) => (
-    <div className="text-zinc-600 mb-2">
-        <input type="text" placeholder={label}
-               className={`px-3 py-3 rounded-lg border border-zinc-300 ${error && 'border-red-500'}`} />
-        {error && <p className='text-red-500 text-sm'>
-            Invalid Username Entered
-        </p>}
-    </div>
-)

@@ -18,16 +18,17 @@ header.navbar{
         }
 
         .mobile-menu{
-            @apply md:hidden fixed top-0 left-0 w-screen h-screen
+            @apply md:hidden fixed top-0 left-0 w-screen h-screen z-50
                 bg-white overflow-y-auto;
 
-            .top, .auth, .menu-section{
+            .top, .auth, .menu-section, .search-menu{
                 @apply px-5 sm:px-10 py-3 border-b;
             }
             .top{
                 @apply sticky top-0 bg-white flex items-center
                   justify-between h-[70px];
             }
+
             .auth{
                 @apply grid grid-cols-2 gap-5 sm:gap-10 text-dark/70;
                 .login-btn{
@@ -36,6 +37,7 @@ header.navbar{
                     &:last-child{@apply bg-dark text-light;}
                 }
             }
+
             .menu .menu-section{
                 @apply py-5 border-b text-dark/70;
                 ul{
@@ -53,7 +55,7 @@ header.navbar{
             @apply flex items-center gap-4;
 
             .search-btn, .menu-toggle-btn{
-                @apply text-h2;
+                @apply text-[1.2rem];
             }
             .menu-toggle-btn{@apply md:hidden;}
 

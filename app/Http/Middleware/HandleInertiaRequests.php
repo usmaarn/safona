@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -37,7 +38,9 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
-            //
+            'auth' => $request->user(),
+            'popularPosts' => Post::limit(5)->get(),
+            'latestPosts' => Post::offset(5)->limit(5)->get(),
         ]);
     }
 }

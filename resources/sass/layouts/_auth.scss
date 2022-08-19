@@ -1,0 +1,50 @@
+.auth-page {
+    @apply min-h-screen bg-zinc-100 p-5 flex items-center justify-center flex-nowrap;
+
+    background: url('/bg.svg');
+
+    .wrapper {
+        @apply flex max-w-[400px] mx-auto flex-nowrap flex-col items-center gap-5;
+
+        .site-logo {
+            @apply text-h2 text-primary uppercase font-bold;
+        }
+
+        .main {
+            @apply flex flex-col gap-5 bg-white p-5 border;
+
+            .page-title {
+                @apply text-h2 tracking-wider uppercase font-medium;
+            }
+
+            .auth-form {
+                @apply border-b max-w-[400px];
+
+                .input-groups {
+                    @apply grid sm:grid-cols-2 gap-x-5 gap-y-2;
+                }
+
+
+                .pages-links {
+                    @apply flex justify-end gap-3;
+
+                    a {
+                        @apply mt-2 text-primary hover:underline;
+                    }
+                }
+            }
+
+            .social-login {
+                @apply gap-3 grid sm:grid-cols-2;
+
+                &.cols {
+                    @apply grid-cols-1;
+                }
+
+                a {
+                    @apply rounded-lg border flex items-center justify-center gap-3 bg-white py-3 text-sm font-bold;
+                }
+            }
+        }
+    }
+}
