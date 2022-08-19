@@ -5,11 +5,13 @@ import SocialLinks from './SocialLinks'
 
 export default function Header() {
     return (
-        <div className='flex items-center justify-between'>
+        <div className='flex flex-col md:flex-row md:items-center justify-between gap-5'>
 
             <div className='flex flex-nowrap gap-3 '>
-                <div className="w-16 h-16 rounded-full shadow bg-zinc-300">
-                    <img src="" alt="" />
+                <div className="">
+                    <div className="w-16 h-16 rounded-full shadow bg-zinc-300">
+                        <img src="" alt="" />
+                    </div>
                 </div>
 
                 <div className="">

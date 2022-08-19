@@ -1,10 +1,9 @@
 .main-wrapper{
     margin-top: 2rem;
+    @apply px-5;
 
     > .top{
-        display: grid;
-        grid-template-columns: 18rem auto 24rem;
-        gap: 2rem;
+        @apply grid md:grid-cols-[18rem_auto_24rem] gap-10;
     }
 
     .heading{
@@ -64,7 +63,7 @@
     //Videos
     .videos{
         @apply p-10 rounded bg-zinc-100 border border-zinc-300 border-dashed my-10;
-        > .wrapper{@apply grid grid-cols-4 gap-10;}
+        > .wrapper{@apply grid md:grid-cols-4 gap-10;}
         .post-title{@apply mt-2;}
         .left{
             @apply col-span-3;
@@ -80,7 +79,7 @@
         .news{
             @apply py-10 border-b;
             .posts{
-                @apply grid grid-cols-3 gap-5;
+                @apply grid sm:grid-cols-2 md:grid-cols-3 gap-5;
 
                 .post{
                     @apply pb-5 border-b;

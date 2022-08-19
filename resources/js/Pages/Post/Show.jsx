@@ -9,7 +9,7 @@ export default function Show({ post }) {
 
             <Header />
 
-            <h1 className="text-[2.5rem] font-black">
+            <h1 className="text-[1.8rem] sm:text-[2.5rem] font-black">
                 {post.title}
             </h1>
 

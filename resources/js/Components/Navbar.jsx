@@ -37,7 +37,9 @@ export default function Navbar() {
 
                 <div className="right">
 
-                    <SearchBar />
+                    <div className="hidden md:flex">
+                        <SearchBar />
+                    </div>
 
                     <button className="menu-toggle-btn" onClick={handleClick}>
                         <RiMenuLine />

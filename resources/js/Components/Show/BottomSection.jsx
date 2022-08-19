@@ -3,7 +3,7 @@ import SocialLinks from "@/Components/Show/SocialLinks";
 
 function BottomSection() {
     return (
-        <div className="flex items-center justify-between border-b pb-10">
+        <div className="flex flex-col-reverse gap-10 md:flex-row md:items-center justify-between border-b pb-10">
             <div className="flex items-center gap-10">
                 <button className="flex items-center gap-1">
                     <BsHeart className="text-[1.5rem]" />
