@@ -1,6 +1,7 @@
 import { RiReplyLine } from 'react-icons/ri';
 import { BsHeart, BsHeartFill, BsThreeDots } from 'react-icons/bs';
 import Reply from "./Reply";
+import date from '@/helpers/date'
 
 function Comment({ comment }) {
     return (
@@ -11,8 +12,14 @@ function Comment({ comment }) {
                     <img src="" alt="" />
                 </div>
                 <div>
-                    <h3><a href="#">Usman Muhammad</a></h3>
-                    <p className='text-p text-zinc-500'>12 hours ago</p>
+                    <h3>
+                        <a href="#">
+                            {comment.user.firstname + ' ' + comment.user.lastname}
+                        </a>
+                    </h3>
+                    <p className='text-p text-zinc-500'>
+                        {date.date_diff(comment.created_at)}
+                    </p>
                 </div>
                 <button className='ml-auto'>
                     <BsThreeDots className='text-h3' />
@@ -20,7 +27,7 @@ function Comment({ comment }) {
             </div>
 
             <p className='text-[1rem] font-light '>
-                I would argue there. TS, while being a superset of js, can become its succesor. Just look at all the popular frameworks and libraries all are being ported to TS. Or in other word TS is replacing vanilla JS pretty much every where.
+                {comment.body}
             </p>
 
             <div className="flex items-center gap-10">

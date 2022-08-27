@@ -6,7 +6,7 @@ import { BsChatSquareText, BsCameraVideo, BsFileEarmarkPost } from 'react-icons/
 
 export default function Sidebar() {
     return (
-        <aside id="editor" className="h-screen px-5 py-10 flex flex-col gap-10">
+        <aside className="h-screen px-5 py-10 flex flex-col gap-10 bg-white border-r">
 
             <Header />
 

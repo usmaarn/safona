@@ -4,7 +4,6 @@ module.exports = {
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.{js,jsx}",
-        "./node_modules/flowbite/**/*.js"
     ],
     theme: {
         screens: {
@@ -46,7 +45,4 @@ module.exports = {
 
         },
     },
-    plugins: [
-        require('flowbite/plugin')
-    ],
 }

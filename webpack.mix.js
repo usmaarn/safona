@@ -8,13 +8,7 @@ mix.js("resources/js/app.js", "public/js")
         processCssUrls: false,
         postCss: [tailwindcss("./tailwind.config.js")],
     })
+    .alias({
+        '@': 'resources/js',
+    })
     .disableSuccessNotifications();
-
-mix.webpackConfig({
-    resolve: {
-        extensions: [".js", ".jsx"],
-        alias: {
-            "@": __dirname + "/resources/js"
-        }
-    }
-});

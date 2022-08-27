@@ -1,60 +1,61 @@
-import { useEffect, useState } from 'react';
-import { Editor as MyEditor } from 'react-draft-wysiwyg';
-import { convertToRaw, ContentState, EditorState } from 'draft-js'
-import htmlToDraft from 'html-to-draftjs';
-import draftToHtml from 'draftjs-to-html';
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import PreviousMap from 'postcss/lib/previous-map';
+import { useQuill } from 'react-quilljs';
+import 'quill/dist/quill.snow.css';
+import { useEffect } from "react";
+import { useState } from "react";
 
 
-const toolbars = {
-    options: [
-        'inline', 'blockType', 'list', 'link', 'embedded', 'emoji', 'image', 'history'
-    ],
-    list: {
-        options: ['unordered', 'ordered', 'indent', 'outdent'],
-    },
-    image: {
-        alignmentEnabled: true,
-        uploadCallback: () => {
-            return { data: { link: 'https://via.placeholder.com/640x480.png/003311?text=nemo' } }
+function Editor({ data, onChange }) {
+
+    const [content, setContent] = useState(null);
+
+    const { quill, quillRef } = useQuill({
+        placeholder: ['Compose an epic...'],
+        modules: {
+            toolbar: [
+                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ align: [] }],
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                [{ indent: '-1' }, { indent: '+1' }],
+                ['link', 'image'],
+                [{ color: [] }, { background: [] }],
+                ['clean'],
+            ],
+            clipboard: { matchVisual: false },
         },
-        previewImage: true,
-        inputAccept: 'image/gif,image/jpeg,image/jpg,image/png,image/svg',
-        alt: { present: true, mandatory: false },
-        defaultSize: {
-            height: 'auto',
-            width: 'auto',
-        },
-    },
-}
-
-
-export default function Editor({ onChange, data }) {
-
-    const [state, setState] = useState('');
+        formats: [
+            'header',
+            'bold', 'italic', 'underline', 'strike',
+            'align', 'list', 'indent',
+            'link', 'image',
+            'color', 'background',
+            'clean',
+        ],
+    });
 
     useEffect(() => {
-        const contentBlock = htmlToDraft(data ?? '<p>Hello World</p>');
-        const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
-        const editorState = EditorState.createWithContent(contentState);
-        setState(editorState)
-    }, [])
+        if (quill) {
+            quill.clipboard.dangerouslyPasteHTML(data ?? '');
+            quill.on('text-change', (delta, oldDelta, source) => {
+                setContent(quill.getText());
+                onChange(quill.root.innerHTML);
+            });
+        }
+    }, [quill])
 
-    const handleChange = (data) => {
-        setState(data)
-        data = draftToHtml(convertToRaw(data.getCurrentContent()));
-        onChange(data)
-    }
+    const c = content && content.replaceAll('\n', ' ')
+    const l = c && c.trim().split(' ').length;
 
     return (
-        <MyEditor
-            toolbar={toolbars}
-            editorState={state ?? ''}
-            toolbarClassName="bg-gray-500 text-p"
-            wrapperClassName="bg-white p-2 shadow"
-            editorClassName="border rounded px-3 font-serif"
-            onEditorStateChange={handleChange}
-        />
-    )
+        <div className="mb-4 w-full bg-gray-50 dark:bg-gray-700">
+            <div className="h-96">
+                <div className="" ref={quillRef} />
+            </div>
+            <div className="py-1 px-5 border-x border-b border-zinc-300 text-sm">
+                <p>{content ? l : 0}/10000</p>
+            </div>
+        </div>
+    );
 }
+
+export default Editor;

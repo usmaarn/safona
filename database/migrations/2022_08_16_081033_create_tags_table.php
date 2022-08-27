@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -21,11 +23,12 @@ return new class extends Migration
         });
 
 
-        Schema::create('taggables', function (Blueprint $table) {
-            $table->id();
-            $table->integer('tag_id');
-            $table->integer('taggable_id');
-            $table->string('taggable_type');
+        Schema::create('post_tag', function (Blueprint $table) {
+            $table->primary(['post_id', 'tag_id']);
+            $table->foreignIdFor(Tag::class)->constrained()
+                    ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignIdFor(Post::class)->constrained()
+                    ->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -38,6 +41,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('tags');
-        Schema::dropIfExists('taggables');
     }
 };

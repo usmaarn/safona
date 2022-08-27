@@ -20,6 +20,7 @@ return new class extends Migration
             $table->mediumText('content');
             $table->string('thumbnail');
             $table->boolean('published')->default(false);
+            $table->integer('category_id');
             $table->foreignId('user_id')->references('id')
                 ->on('users')->cascadeOnDelete();
             $table->timestamps();

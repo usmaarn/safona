@@ -10,7 +10,7 @@ export default function PageLayout({ title, children, morePosts }) {
 
             <div className="p-5 max-w-[1080px] mx-auto">
 
-                <div className="wrapper grid md:grid-cols-[auto_350px] gap-10 md:gap-20 my-10">
+                <div className="wrapper grid lg:grid-cols-[auto_350px] gap-10 md:gap-20 my-10">
 
                     <div className="space-y-10">
 

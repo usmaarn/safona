@@ -3,19 +3,23 @@ import Header from '@/Components/Show/Header';
 import BottomSection from '@/Components/Show/BottomSection';
 import Comments from '@/Components/Show/Comments';
 
-export default function Show({ post }) {
+export default function Show({ post, postTags, author }) {
+
     return (
         <PageLayout morePosts>
 
-            <Header />
+            <Header post={post} author={author} />
 
             <h1 className="text-[1.8rem] sm:text-[2.5rem] font-black">
                 {post.title}
             </h1>
 
             <div className="flex space-x-2">
-                {['politics', 'election', 'news', 'gist'].map(tag => (
-                    <a href="#" className="capitalize tracking-wider px-3 py-1 font-medium border rounded" key={tag}>{tag}</a>
+                {postTags.map(tag => (
+                    <a key={tag.id} href={route('tag.show', tag.slug)}
+                        className="capitalize tracking-wider px-3 py-1 font-medium border rounded">
+                        {tag.name}
+                    </a>
                 ))}
             </div>
 
@@ -27,7 +31,7 @@ export default function Show({ post }) {
                 {post.content}
             </div>
 
-            <BottomSection />
+            <BottomSection post={post.slug} />
 
             <Comments />
 

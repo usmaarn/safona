@@ -1,26 +1,8 @@
 .dashboard {
 
-    .primary {
-        color: var(--color-primary);
-    }
-
-    .danger {
-        color: var(--color-danger);
-    }
-
-    .warning {
-        color: var(--color-warning);
-    }
-
-    .success {
-        color: var(--color-success);
-    }
-
     @apply md:grid;
-    padding: 0% 2%;
     margin: auto;
     grid-template-columns: 14rem 1fr 20rem;
-    gap: 1.8rem;
     background: #F6F8F9;
     font-family: 'Poppins', sans-serif;
 
