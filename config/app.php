@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Safona Media'),
 
     /*
     |--------------------------------------------------------------------------
@@ -121,7 +121,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'W2th9U4IjAhY7frn5wegBq6WCLfWXWN+DbZLiD9V/j4='),
 
     'cipher' => 'AES-256-CBC',
 
@@ -181,7 +181,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Aws\Laravel\AwsServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -211,7 +210,6 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'AWS' => Aws\Laravel\AwsFacade::class,
     ])->toArray(),
 
 ];
