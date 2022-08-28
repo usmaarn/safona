@@ -12,10 +12,11 @@ export default function Sidebar() {
 
             <div className="sidenav-menu flex-grow flex flex-col">
 
-                <SideNavItem link="#" icon={<MdOutlineDashboard />} text="Dashboard" />
-                <SideNavItem link="#" icon={<BsFileEarmarkPost />} text="Posts" />
-                <SideNavItem link="#" icon={<MdOutlineCategory />} text="Categories" />
-                <SideNavItem link="#" icon={<TbTags />} text="Tags" />
+                <SideNavItem link="/dashbaord" icon={<MdOutlineDashboard />} text="Dashboard" />
+                <SideNavItem link={route('post.index')} icon={<BsFileEarmarkPost />} text="Posts" />
+                <SideNavItem link={route('admin.cat.index')} icon={<MdOutlineCategory />}
+                    text="Categories" />
+                <SideNavItem link={route('admin.tag.index')} icon={<TbTags />} text="Tags" />
                 <SideNavItem link="#" icon={<TbUsers />} text="Users" />
                 <SideNavItem link="#" icon={<BsChatSquareText />} text="Comments" />
                 <SideNavItem link="#" icon={<BsCameraVideo />} text="Videos" />
@@ -23,7 +24,7 @@ export default function Sidebar() {
                 <SideNavItem link="#" icon={<TbSettings />} text="Settings" />
 
                 <button className="mt-auto flex items-center gap-2 text-red-500">
-                    <MdLogout className="text-h2" />
+                     <MdLogout className="text-h2" />
                     <h3>Logout</h3>
                 </button>
 

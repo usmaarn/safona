@@ -1,5 +1,6 @@
-import { timeAgo } from '@/helpers/dateFormatter';
+import date from '@/helpers/date';
 import { PostLink, CatLink } from "@/Components/Links";
+import urls from '@/helpers/urls';
 
 export default function LatestNews({ posts }) {
 
@@ -10,13 +11,14 @@ export default function LatestNews({ posts }) {
                 {posts.map(post => (
                     <div key={post.id} className="post">
                         <a href={route('post.show', post.slug)} className="post-thumbnail">
-                            <img src={post.thumbnail} alt="News Image" className="w-full" />
+                            <img src={urls.thumbnailUrl(post.thumbnail)}
+                                alt={post.title} className="w-full" />
                         </a>
                         <PostLink text={post.title} slug={post.slug} className='post-title' />
-                        <div className="post-meta">
+                        <div className="post-meta flex items-center gap-3">
                             <CatLink text="Category" slug='cat' className="post-tag" />
                             <p className="post-date">
-                                {timeAgo(post.created_at)}
+                                {date.date_diff(post.created_at)}
                             </p>
                         </div>
                     </div>

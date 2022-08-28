@@ -1,4 +1,4 @@
-import { timeAgo } from '@/helpers/dateFormatter';
+import date from '@/helpers/date';
 import { PostLink, CatLink } from "@/Components/Links";
 
 export default function TopNews({ posts }) {
@@ -17,7 +17,7 @@ export default function TopNews({ posts }) {
                         <div className="post-meta">
                             <CatLink text="Category" slug='cat' className="post-tag" />
                             <p className="post-date">
-                                {timeAgo(post.created_at)}
+                                {date.date_diff(post.created_at)}
                             </p>
                         </div>
                     </div>

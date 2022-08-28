@@ -1,0 +1,12 @@
+
+.table{
+    @apply rounded-lg bg-white table-auto w-full overflow-hidden ring-1 ring-zinc-300;
+
+    tr{@apply border-b;}
+
+    thead tr{@apply  bg-zinc-100}
+
+    th, td{@apply text-left;}
+    th{@apply p-5}
+    td{@apply py-3 px-5}
+}

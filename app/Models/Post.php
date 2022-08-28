@@ -13,6 +13,10 @@ class Post extends Model
 {
     use HasFactory, CanBeLiked;
 
+    protected $fillable = [
+        'title', 'slug', 'content', 'thumbnail', 'category_id', 'published'
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

@@ -1,5 +1,4 @@
 import Dashboard from "@/Layouts/Dashboard"
-import Editor from "../../Components/Editor"
 
 export default function Index() {
 
@@ -9,7 +8,7 @@ export default function Index() {
 
     return (
         <Dashboard>
-            <Editor onChange={handleChange} data='baba is here' />
+
         </Dashboard>
     )
 }

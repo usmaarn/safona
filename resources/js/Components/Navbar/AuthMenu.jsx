@@ -27,7 +27,7 @@ export default function AuthMenu() {
 
             <CSSTransition in={open} timeout={200} classNames='my-node' unmountOnExit>
                 <ClickAwayListener onClickAway={() => setOpen(false)}>
-                    <div className="absolute top-[120%] shadow p-2 rounded border right-0 bg-white">
+                    <div className="absolute z-50 top-[120%] shadow p-2 rounded border right-0 bg-white">
                         <a href="/dashboard" className="px-3 py-1.5 rounded flex items-center gap-2 hover:bg-gray-200">
                             <TbDashboard className="text-h3" /> Dashboard
                         </a>

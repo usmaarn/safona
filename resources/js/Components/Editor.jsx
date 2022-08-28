@@ -2,9 +2,10 @@ import { useQuill } from 'react-quilljs';
 import 'quill/dist/quill.snow.css';
 import { useEffect } from "react";
 import { useState } from "react";
+import { InputError } from '@/Components/Form';
 
 
-function Editor({ data, onChange }) {
+function Editor({ data, onChange, error, label }) {
 
     const [content, setContent] = useState(null);
 
@@ -47,14 +48,14 @@ function Editor({ data, onChange }) {
     const l = c && c.trim().split(' ').length;
 
     return (
-        <div className="mb-4 w-full bg-gray-50 dark:bg-gray-700">
-            <div className="h-96">
-                <div className="" ref={quillRef} />
-            </div>
+        <div className={"h-[80vh] flex flex-col " + (error && 'border border-red-500')}>
+            <label>{label}</label>
+            <div className="flex-1 overflow-y-auto " ref={quillRef} />
             <div className="py-1 px-5 border-x border-b border-zinc-300 text-sm">
                 <p>{content ? l : 0}/10000</p>
             </div>
-        </div>
+            {error && <InputError error={error} />}
+        </div >
     );
 }
 

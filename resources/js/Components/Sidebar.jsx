@@ -1,9 +1,10 @@
 
 import { usePage } from '@inertiajs/inertia-react'
 import React from 'react'
-import { timeAgo } from '@/helpers/dateFormatter'
+import date from '@/helpers/date'
 import { BsDot } from 'react-icons/bs'
 import { CatLink, TagLink } from './Links';
+import urls from '@/helpers/urls';
 
 export default function Sidebar() {
 
@@ -26,7 +27,7 @@ export default function Sidebar() {
                                 <CatLink text='World' slug='world' />
                                 <BsDot />
                                 <p className="post-date">
-                                    {timeAgo(post.created_at)}
+                                    {date.date_diff(post.created_at)}
                                 </p>
                             </div>
 
@@ -42,7 +43,8 @@ export default function Sidebar() {
                         <div className="flex flex-nowrap gap-2" key={post.id}>
                             <div className="post-thumbnail bg-gray">
                                 <div className=" w-[100px] h-[100px]">
-                                    <img src={post.thumbnail} alt="news" className='wi-full' />
+                                    <img src={urls.thumbnailUrl(post.thumbnail)}
+                                        alt="news" className='wi-full' />
                                 </div>
                             </div>
                             <div className="space-y-2">
@@ -55,7 +57,7 @@ export default function Sidebar() {
                                     <CatLink text='politics' slug='politics' />
                                     <BsDot />
                                     <p className="post-date">
-                                        {timeAgo(post.created_at)}
+                                        {date.date_diff(post.created_at)}
                                     </p>
                                 </div>
 

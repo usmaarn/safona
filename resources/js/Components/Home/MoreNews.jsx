@@ -1,4 +1,4 @@
-import { timeAgo } from '@/helpers/dateFormatter';
+import date from '@/helpers/date';
 import { PostLink, CatLink } from "@/Components/Links";
 
 export default function MoreNews({ posts }) {
@@ -19,7 +19,7 @@ export default function MoreNews({ posts }) {
                                 <p className="post-tag">
                                     <a href="#">Politics</a>
                                 </p>
-                                <p className="post-date">{timeAgo(post.created_at)}</p>
+                                <p className="post-date">{date.date_diff(post.created_at)}</p>
                             </div>
                         </div>
                     ))}
@@ -40,7 +40,7 @@ export default function MoreNews({ posts }) {
                                 <p className="post-tag">
                                     <a href="#">Politics</a>
                                 </p>
-                                <p className="post-date">{timeAgo(post.created_at)}</p>
+                                <p className="post-date">{date.date_diff(post.created_at)}</p>
                             </div>
                         </div>
                     ))}
@@ -61,7 +61,7 @@ export default function MoreNews({ posts }) {
                                 <p className="post-tag">
                                     <a href="#">Politics</a>
                                 </p>
-                                <p className="post-date">{timeAgo(post.created_at)}</p>
+                                <p className="post-date">{date.date_diff(post.created_at)}</p>
                             </div>
                         </div>
                     ))}

@@ -7,10 +7,12 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" />
     @routes
     <script src="{{ asset('/js/app.js') }}" defer></script>
-    
+
     @inertiaHead
 </head>
 <body>
 @inertia
+
+    <div id="modals"></div>
 </body>
 </html>

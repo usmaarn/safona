@@ -1,6 +1,6 @@
 import { GrGoogle, GrTwitter } from 'react-icons/gr'
 import Auth from "@/Layouts/Auth"
-import { Input, CheckBox, SubmitButton } from '@/Components/Form'
+import Form, { Input, CheckBox, SubmitButton } from '@/Components/Form'
 import { useForm } from '@inertiajs/inertia-react'
 
 export default function Login() {
@@ -26,7 +26,7 @@ export default function Login() {
 
         <Auth title="Login">
 
-            <form onSubmit={submit} className="auth-form w-96">
+            <form onSubmit={submit} className="form">
 
                 <Input label="Username or Email Address" name='username' value={data.username}
                     onChange={handleChange} error={errors.username} />
@@ -39,21 +39,21 @@ export default function Login() {
 
                 <SubmitButton text="Sign In" />
 
-                <div className="pages-links">
+                <div className="flex items-center gap-5 justify-end">
                     <a href={route('login')}>Forgot Password?</a>
                     <a href={route('register')}>Register</a>
                 </div>
 
             </form>
 
-            <div className="social-login cols">
+            {/* <div className="social-login cols">
                 <a href="#" className='text-red-500'>
                     <GrGoogle /> Sign In With Google
                 </a>
                 <a href="#" className='text-sky-500'>
                     <GrTwitter /> Sign In With Twitter
                 </a>
-            </div>
+            </div> */}
 
         </Auth>
     )

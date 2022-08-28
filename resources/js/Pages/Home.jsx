@@ -22,7 +22,7 @@ export default function Home(props) {
                     </div>
                 </div>
 
-                <Videos />
+                {/* <Videos /> */}
 
                 <MoreNews posts={props.career} />
             </div>

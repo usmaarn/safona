@@ -14,33 +14,18 @@ class PagesController extends Controller
     {
         $query = $request->query('q');
         $posts = Post::where('title', 'like', "%{$query}%")->limit(10)->get();
-        
+
         return Inertia::render('Search', [
            'query' => $query,
            'posts' => $posts
-        ]);    
-    }
-
-    public function categories()
-    {
-        return Inertia::render('Categories', [
-           'cats' => Category::all(),           
-        ]);        
-    }
-
-    public function category(Category $category)
-    {
-        return Inertia::render('Search', [
-           'query' => $category->slug,
-           'posts' => $category->posts,
-        ]);        
+        ]);
     }
 
     public function tags()
     {
         return Inertia::render('Tags', [
            'tags' => Tag::all(),
-        ]);        
+        ]);
     }
 
     public function tag(Tag $tag)

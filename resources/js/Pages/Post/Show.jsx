@@ -2,6 +2,7 @@ import PageLayout from '@/Layouts/PageLayout';
 import Header from '@/Components/Show/Header';
 import BottomSection from '@/Components/Show/BottomSection';
 import Comments from '@/Components/Show/Comments';
+import urls from '../../helpers/urls';
 
 export default function Show({ post, postTags, author }) {
 
@@ -23,13 +24,12 @@ export default function Show({ post, postTags, author }) {
                 ))}
             </div>
 
-            <div className="bg-zinc-300">
-                <img src={post.thumbnail} alt="" className="w-full" />
+            <div className="">
+                <img src={urls.imageUrl(post.thumbnail)} alt="" className="w-full" />
             </div>
 
-            <div className="space-y-3 text-[1.2rem] font-light leading-[2]">
-                {post.content}
-            </div>
+            <div className="space-y-3 text-[1.2rem] font-light leading-[2]"
+                dangerouslySetInnerHTML={{ __html: post.content }} />
 
             <BottomSection post={post.slug} />
 

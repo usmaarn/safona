@@ -1,33 +1,53 @@
-.input-box,
-.check-box,
-.textarea-box {
 
-    @apply text-zinc-600 mb-2 text-base;
-
-    .error-text {
-        @apply text-red-500 text-sm;
-    }
+.form{
+    @apply flex gap-3 flex-col bg-white p-5 ring-1 ring-zinc-200 shadow items-start rounded-lg;
 }
 
-.input-box {
-
-    input {
-        @apply px-3 w-full py-3 rounded-lg border border-zinc-300;
-
-        &.invalid-input {
-            @apply border-red-500 placeholder:text-red-500;
-        }
-    }
+.input{
+    @apply px-3 py-2.5 ring-2 rounded-lg w-full;
 }
 
-.check-box {
+.input-box{
 
-    label {
-        @apply flex items-center gap-2;
+    @apply w-full;
+
+    .form-input{
+        @apply px-3 py-2 text-zinc-800 border font-bold
+        border-zinc-200 outline-none w-full resize-none rounded;
+        &.error{@apply border-red-500;}
+    }
+    .input-error{
+        @apply text-sm text-red-500;
     }
 }
 
 
-.submit-btn{
-    @apply bg-dark w-full text-center py-3 rounded-lg text-white hover:opacity-80 font-bold;
+.check-box label{
+    @apply flex items-center gap-3;
+}
+
+.submit-btn, .btn{
+    @apply bg-zinc-700 text-center py-3 rounded-lg text-white px-10 shadow
+       hover:opacity-80 font-bold;
+}
+
+.file-upload{
+    @apply h-96 border border-dashed flex items-center justify-center;
+    &.error{@apply border-red-500 text-red-500;}
+    input[type="file"]{@apply hidden;}
+    img {@apply w-full h-full object-center object-cover lg:w-full lg:h-full;}
+}
+
+.multiple-select{
+    @apply relative w-full;
+    .input-box{
+        @apply p-2 flex flex-wrap gap-2 rounded border border-zinc-300 bg-white;
+        .item{@apply px-2 py-1 bg-zinc-300 flex  items-center gap-2;}
+        input{@apply flex-grow outline-none;}
+        &.error{@apply border-red-500;}
+    }
+    .options{
+        @apply absolute flex flex-col w-full p-3 rounded-lg bg-white border;
+        .option{@apply px-2 py-2 rounded-md hover:bg-zinc-200;}
+    }
 }

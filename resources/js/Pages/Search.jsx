@@ -1,8 +1,13 @@
 import PageLayout from '@/Layouts/PageLayout';
-import { timeAgo } from '@/helpers/dateFormatter';
+import date from '@/helpers/date';
 import LoadMore from '@/Components/LoadMore';
 
 export default function Search({ posts, query }) {
+
+    const thumbnail = (url) => {
+        return new URL('/storage/thumbnails/'+url, location.origin);
+    };
+
     return (
         <PageLayout title={'Result for: <b>'+query+'</b>'}>
 
@@ -10,7 +15,7 @@ export default function Search({ posts, query }) {
                 {posts.map(post => (
                     <div className="space-y-1" key={post.id}>
                         <div className="h-52 rounded bg-zinc-300">
-                            <img src={post.thumbnail} alt=""
+                            <img src={thumbnail(post.thumbnail)} alt=""
                                 className="object-cover w-full h-full" />
                         </div>
                         <h3 className="">
@@ -22,7 +27,7 @@ export default function Search({ posts, query }) {
                             <p className="post-tag">
                                 <a href="#">Politics</a>
                             </p>
-                            <p className="post-date">{timeAgo(post.created_at)}</p>
+                            <p className="post-date">{date.date_diff(post.created_at)}</p>
                         </div>
                     </div>
                 ))}

@@ -1,4 +1,4 @@
-import { timeAgo } from '@/helpers/dateFormatter'
+import date from '@/helpers/date'
 import { PostLink, CatLink } from '@/Components/Links';
 
 export default function Popular({ posts, business }) {
@@ -13,7 +13,7 @@ export default function Popular({ posts, business }) {
                             <CatLink text="Category" slug="slug" className="post-tag" />
                             <PostLink text={post.title} slug={post.slug} className="post-title" />
                             <p className="post-date">
-                                {timeAgo(post.created_at)}
+                                {date.date_diff(post.created_at)}
                             </p>
                         </div>
                     ))}
@@ -31,7 +31,7 @@ export default function Popular({ posts, business }) {
                             <div className="content">
                                 <CatLink text="Category" slug="slug" className="post-tag" />
                                 <PostLink text={post.title} slug={post.slug} className="post-title" />
-                                <p className="post-date">{timeAgo(post.created_at)}</p>
+                                <p className="post-date">{date.date_diff(post.created_at)}</p>
                             </div>
                         </div>
                     ))}

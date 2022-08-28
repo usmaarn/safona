@@ -4,24 +4,27 @@
     background: url('/bg.svg');
 
     .wrapper {
-        @apply flex max-w-[400px] mx-auto flex-nowrap flex-col items-center gap-5;
+        @apply flex max-w-[400px] mx-auto flex-nowrap flex-col items-center gap-5 p-5;
 
         .site-logo {
-            @apply text-h2 text-primary uppercase font-bold;
+            @apply text-h2 text-primary capitalize font-bold;
         }
 
         .main {
-            @apply flex flex-col gap-5 bg-white p-5 border;
 
             .page-title {
-                @apply text-h2 tracking-wider uppercase font-medium;
+                @apply text-h3 tracking-wider uppercase font-bold text-center;
             }
 
             .auth-form {
-                @apply border-b max-w-[400px];
+                @apply max-w-[400px] w-full;
 
                 .input-groups {
-                    @apply grid sm:grid-cols-2 gap-x-5 gap-y-2;
+                    @apply grid gap-x-5 gap-y-2;
+
+                    input{
+                        @apply font-semibold rounded-lg;
+                    }
                 }
 
 

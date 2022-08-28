@@ -1,4 +1,4 @@
-header.navbar{
+ header.navbar{
     @apply w-full h-[70px] shadow px-5;
 
     nav.wrapper{
@@ -9,7 +9,7 @@ header.navbar{
         }
 
         .navmenu{
-            @apply hidden md:flex items-center gap-5;
+            @apply hidden lg:flex items-center gap-5;
             li {
                 a{
                     @apply flex items-center gap-1 text-dark font-semibold;
@@ -18,7 +18,7 @@ header.navbar{
         }
 
         .mobile-menu{
-            @apply md:hidden fixed top-0 left-0 w-screen h-screen z-50
+            @apply lg:hidden fixed top-0 left-0 w-screen h-screen z-50
                 bg-white overflow-y-auto;
 
             .top, .auth, .menu-section, .search-menu{
@@ -57,10 +57,10 @@ header.navbar{
             .search-btn, .menu-toggle-btn{
                 @apply text-[1.2rem];
             }
-            .menu-toggle-btn{@apply md:hidden;}
+            .menu-toggle-btn{@apply lg:hidden;}
 
             .login-btn{
-                @apply hidden md:block px-5 py-2 rounded-lg border bg-dark text-light;
+                @apply hidden lg:block px-5 py-2 rounded-lg border bg-dark text-light;
             }
         }
     }
