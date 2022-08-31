@@ -1,80 +1,20 @@
 
-footer.footer{
-    @apply bg-dark text-zinc-400/80 uppercase;
-    background: rgb(24 24 27);
+.footer{
+    @apply p-5 md:p-20 bg-zinc-200 text-zinc-300;
 
     .wrapper{
-        @apply max-w-[1200px] mx-auto p-5 md:py-10 flex flex-col gap-5;
+        @apply flex flex-col-reverse md:grid grid-cols-4 gap-20;
 
-        .menu{
-            @apply grid sm:grid-cols-2 md:grid-cols-4 gap-10 tracking-wide;
-
-            .menu-section ul{
-                @apply flex flex-col gap-1;
-
-                li{
-                    a{@apply hover:underline;}
-                    &.heading{@apply font-bold}
-                }
-            }
+        .logo{
+            @apply text-4xl md:text-xl font-bold uppercase
+                text-zinc-600 leading-9 md:leading-5;
         }
-
-        .middle{
-            @apply flex items-center justify-center sm:justify-between p-5
-                border-t border-b border-zinc-700;
-
-            .site-logo{
-                @apply text-h3 tracking-wide hidden sm:block;
-            }
-
-            .social-icons{
-                @apply flex items-center gap-3;
-                a{
-                    @apply px-3 py-3 border rounded border-zinc-700
-                        text-zinc-500 hover:bg-zinc-700 hover:text-dark
-                        text-p;
-                }
-            }
-        }
-
-        .bottom{
-           @apply flex flex-col-reverse md:flex-row gap-5 items-center
-                justify-between uppercase;
-
-            .copyright{
-                @apply flex items-center flex-wrap;
-                span{
-                    @apply px-1;
-                    &:first-child::after{
-                        content: '|';
-                        @apply ml-2;
-                    }
-                    a{
-                        @apply font-semibold hover:underline ml-1;
-                    }
-                }
-            }
-
-            ul{
-                @apply flex items-center flex-wrap;
-                li{
-                    @apply px-2 uppercase;
-                    &::after{
-                        content: '|';
-                        @apply pl-4;
-                    }
-
-                    &:last-child::after{
-                        content: '';
-                        @apply p-0;
-                    }
-
-                    a{
-                        @apply hover:underline;
-                    }
-                }
-            }
-        }
-
     }
+
+    .menu{
+        @apply md:col-span-3 space-y-10 md:space-y-0 md:grid text-xl md:text-base grid-cols-4 gap-10;
+        a{@apply block hover:underline text-zinc-500;}
+        li{@apply font-bold md:mb-3 text-zinc-400 list-none;}
+    }
+
 }

@@ -17,14 +17,12 @@ class EmailVerificationController extends Controller
 
     public function verify(EmailVerificationRequest $request)
     {
-        $request->fulfill();
-        return redirect('/');
+
     }
 
     public function send(Request $request)
     {
-        $request->user()->sendEmailVerificationNotification();
-        return back()->with('message', 'Email Verification Sent Successfully');
+        
     }
 
     public function form()

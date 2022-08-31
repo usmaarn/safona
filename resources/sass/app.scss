@@ -3,21 +3,28 @@
     src: url('Charter BT.ttf');
 }
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
 html {
     font-size: 14px;
 }
 
 body {
-    @apply text-dark font-serif;
+    @apply text-zinc-800 font-serif;
     a{
         @apply hover:underline;
     }
 }
 
+.avatar-icon{
+    @apply w-12 h-12 flex items-center justify-center rounded-full bg-zinc-500 text-white;
+}
+
+@import "placeholder";
 @import "animations";
-@import "layouts";
-@import '_components';
-@import "dashboard";
+@import "pages/index";
+@import 'layouts/index';
+@import "_components/index";
 
 
 @tailwind base;

@@ -29,7 +29,7 @@ export default function Navbar() {
                     <li><a href={route('cat.show', 'politics')}>Politics</a></li>
                     <li><a href={route('cat.show', 'campus')}>Campus</a></li>
                     <li><a href={route('cat.show', 'business')}>Business</a></li>
-                    <li><a href={route('cat.show', 'sports')}>Sports</a></li>
+                     <li><a href={route('cat.show', 'sports')}>Sports</a></li>
                     <li><a>More <MdExpandMore /></a></li>
                 </ul>
 
