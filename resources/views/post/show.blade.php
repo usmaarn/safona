@@ -19,7 +19,7 @@
                             </p>
                         </div>
                     </div>
-                    <livewire:components.posts.show.share-menu :slug="$post->slug" />
+                    @include('components.posts.show.share-menu')
                 </div>
 
                 <div class="space-x-5">
@@ -45,18 +45,25 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-10 sm:items-center justify-between">
-                        <div class="flex items-center gap-10 text-2xl">
-                            <button class="flex items-start gap-2">
-                                <i class="bi bi-heart text-4xl"></i>
-                                <span>23</span>
+
+                        <div class="flex items-center gap-10 text-xl">
+                            <button class="flex items-start gap-2" wire:click='toggleLike'>
+                                @if (auth()->user() && auth()->user()->hasLiked($post))
+                                    <i class="bi bi-heart-fill text-4xl"></i>
+                                @else
+                                    <i class="bi bi-heart text-4xl"></i>
+                                @endif
+                                <span>{{ $post->likes() }}</span>
                             </button>
-                            <p class="flex items-start gap-2">
-                                <i class="bi bi-chat-square-text text-4xl"></i>
-                                <span>354</span>
-                            </p>
+                                {{-- <p class="flex items-start gap-2">
+                                    <i class="bi bi-chat-square-text text-4xl"></i>
+                                    <span>354</span>
+                                </p> --}}
                         </div>
-                        <livewire:components.posts.show.share-menu :slug="$post->slug" />
+
+                        @include('components.posts.show.share-menu')
                     </div>
+
                 </div>
             </div>
 

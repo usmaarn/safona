@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Auth;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 
@@ -37,6 +38,7 @@ class Register extends Component
     public function register()
     {
         $validatedData = $this->validate();
+        $validatedData['password'] = Hash::make($this->password);
         $user = User::create($validatedData);
         event(new Registered($user));
         Auth::login($user);

@@ -41,11 +41,11 @@ trait CanLike {
             ->where('model_id', $model->id)
             ->exists();
     }
-    
+
     public function toggleLike($model)
     {
-        return $this->hasLikeed($model)
-            ? $this->unLike($model) 
+        return $this->hasLiked($model)
+            ? $this->unLike($model)
             : $this->like($model);
     }
 }

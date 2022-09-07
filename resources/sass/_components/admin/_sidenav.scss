@@ -1,0 +1,8 @@
+.sidenav{
+
+    @apply bg-white border-r h-screen;
+
+    .nav-item{
+        @apply px-3 py-2 rounded-lg block hover:bg-zinc-100;
+    }
+}

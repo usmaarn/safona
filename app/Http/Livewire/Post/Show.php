@@ -20,6 +20,11 @@ class Show extends Component
             ->whereNot('id', $post->id)->latest()->limit(8)->get();
     }
 
+    public function toggleLike()
+    {
+        return auth()->user()->toggleLike($this->post);
+    }
+
     public function render()
     {
         return view('post.show');

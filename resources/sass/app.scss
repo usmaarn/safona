@@ -11,17 +11,16 @@ html {
 
 body {
     @apply text-zinc-800 font-serif;
-    a{
+
+    a {
         @apply hover:underline;
     }
 }
 
-.avatar-icon{
+.avatar-icon {
     @apply w-12 h-12 flex items-center justify-center rounded-full bg-zinc-500 text-white;
 }
 
-@import "placeholder";
-@import "animations";
 @import "pages/index";
 @import 'layouts/index';
 @import "_components/index";

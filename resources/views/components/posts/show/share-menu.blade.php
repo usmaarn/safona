@@ -2,11 +2,11 @@
     <a href="#">
         <i class="bi bi-facebook"></i>
     </a>
-    <a href="https://wa.me/?text={{ route('post.show', $slug) }}">
+    <a href="https://wa.me/?text={{ route('post.show', $post->slug) }}">
         <i class="bi bi-whatsapp"></i>
     </a>
     {{-- https://twitter.com/intent/tweet? --}}
-    <a href="https://twitter.com/share?url={{ route('post.show', $slug) }}">
+    <a href="https://twitter.com/share?url={{ route('post.show', $post->slug) }}">
         <i class="bi bi-twitter"></i>
     </a>
     <a href="#">
