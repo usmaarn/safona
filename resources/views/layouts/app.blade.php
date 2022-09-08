@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 
-@section('content')
+@section('body')
 
-<livewire:layouts.navbar />
+@include('layouts.navbar')
 
 <div class="max-w-[1200px] mx-auto p-5 w-95%">
 
@@ -16,11 +16,11 @@
     @endif
 
     <div class="">
-        {{ $slot }}
+        @yield('content')
     </div>
 
 </div>
 
-<livewire:layouts.footer />
+@include('layouts.footer')
 
 @endsection

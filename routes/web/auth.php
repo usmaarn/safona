@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Livewire\Auth\EmailNotice;
 use App\Http\Livewire\Auth\ForgotPassword;
 use Illuminate\Support\Facades\Route;

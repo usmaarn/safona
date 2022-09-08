@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 
-@section('content')
+@section('body')
 <div class="bg-zinc-100 grid grid-cols-[250px_auto]">
     @include('components.admin.sidenav')
     <div class="">
@@ -12,7 +12,7 @@
         </nav>
 
         <div class="p-5">
-            {{ $slot }}
+            @yield('content')
         </div>
     </div>
 </div>

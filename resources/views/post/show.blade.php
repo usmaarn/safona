@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+
+@section('content')
 
 <div class="py-10 md:py-20 space-y-10">
         <h1 class="text-4xl md:text-5xl md:pb-10">{{ $post->title }}</h1>
@@ -19,7 +23,8 @@
                             </p>
                         </div>
                     </div>
-                    @include('components.posts.show.share-menu')
+
+                    <div class="share-menu" data-post-slug="{{ $post->slug }}"></div>
                 </div>
 
                 <div class="space-x-5">
@@ -61,13 +66,42 @@
                                 </p> --}}
                         </div>
 
-                        @include('components.posts.show.share-menu')
+                        <div class="share-menu" data-post-slug="{{ $post->slug }}"></div>
+
                     </div>
 
                 </div>
             </div>
 
-            <livewire:components.news-style-one :posts="$relatedNews" heading="Related News" />
+
+            {{-- Most Viewed Posts --}}
+
+            <div class="col-span-1">
+                <div class="news-style-one">
+                    <h3 class="heading">Related News</h3>
+                    <div class="posts">
+                        @foreach ($relatedNews as $post)
+                            <div class="post">
+                                <a href="{{ route('post.show', $post->slug) }}" class="image-wrapper bg-zinc-300">
+                                    <img src="{{ $post->thumbnail }}" alt="">
+                                </a>
+                                <div class="content">
+                                    <a href="#" class="post-tag">
+                                        {{ $post->category->name }}
+                                    </a>
+                                    <h3>
+                                        <a href="{{ route('post.show', $post->slug) }}">
+                                            {{ $post->title }}
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
+
+@endsection

@@ -1,9 +1,15 @@
-<div class="post-index">
-    <livewire:components.post.index.latest-news />
-    <livewire:components.post.index.popular-news />
-    <livewire:components.post.index.politics />
-    <livewire:components.post.index.entertainment />
-    <livewire:components.post.index.education />
-    <livewire:components.post.index.sport />
-    <livewire:components.post.index.opinions>
-</div>
+@extends('layouts.app')
+
+@section('content')
+
+    <div class="post-index">
+        <x-post.index.latest-news :posts="$posts" />
+        <x-post.index.popular-news :posts="$popular" :mostViewed="$mostViewed"/>
+        <x-post.index.politics :posts="$politics" />
+        <x-post.index.entertainment :posts="$entertainment" />
+        <x-post.index.education :posts="$education" />
+        <x-post.index.sport :posts="$sport" />
+        <x-post.index.opinions :posts="$opinion" />
+    </div>
+
+@endsection

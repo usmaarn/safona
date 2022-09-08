@@ -6,7 +6,7 @@
         <div class="p-5">
             <a href="{{ route('admin.home') }}" class="nav-item">Dashboard</a>
             <a href="{{ route('admin.posts') }}" class="nav-item">Posts</a>
-            <a href="{{ route('admin.cat') }}" class="nav-item">Categories</a>
+            <a href="{{ route('admin.categories') }}" class="nav-item">Categories</a>
             <a href="{{ route('admin.tags') }}" class="nav-item">Tags</a>
             <a href="{{ route('admin.home') }}" class="nav-item">Comments</a>
             <a href="{{ route('admin.home') }}" class="nav-item">Settings</a>

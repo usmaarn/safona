@@ -7,15 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{  asset('css/cssg.css') }}">
     @livewireStyles
+    @routes
 </head>
 
 <body class="">
 
     <div class="app">
-        @yield('content')
+        @yield('body')
     </div>
+
+    <div id="modals"></div>
 
     @livewireScripts
     <script src="{{ asset('js/alpine.js') }}"></script>

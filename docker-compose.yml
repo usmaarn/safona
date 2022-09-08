@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+    app:
+        build: .
+        image: app
+        networks:
+            - test-net
+        working_dir: /var/www/html
+        volumes:
+            - .:/var/www/html
+        command: php -S 0.0.0.0:8000 public/index.php
+        ports:
+            - 8000:8000
+        depends_on:
+            - db
+    db:
+        image: mysql:8.0
+        volumes:
+            - db-data:/var/lib/mysql
+        restart: unless-stopped
+        environment:
+            - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+            - MYSQL_USER=${DB_USERNAME}
+            - MYSQL_PASSWORD=${DB_PASSWORD}
+            - MYSQL_DATABASE=${DB_DATABASE}
+
+    adminer:
+        image: adminer
+        restart: unless-stopped
+        links:
+            - db
+        ports:
+            - 9000:8080
+
+volumes:
+    db-data:
+
+networks:
+    test-net:
+        driver: bridge

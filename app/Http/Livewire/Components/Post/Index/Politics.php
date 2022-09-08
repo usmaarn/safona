@@ -14,7 +14,6 @@ class Politics extends Component
     public function mount()
     {
         $politics = Category::where('slug', 'politics')->first();
-        $this->posts = $politics->posts()->latest()->limit(8)->get();
     }
 
     public function render()

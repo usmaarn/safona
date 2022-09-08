@@ -17,7 +17,7 @@ class EnsureIsAdministrator
     public function handle(Request $request, Closure $next)
     {
 
-        if ($request->user->roles) {
+        if ($request->user()) {
             return $next($request);
         }
 

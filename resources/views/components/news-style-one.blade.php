@@ -1,3 +1,4 @@
+
 <div class="news-style-one">
     <h3 class="heading">{{ $heading }}</h3>
     <div class="posts">
